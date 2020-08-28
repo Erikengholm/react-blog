@@ -1,11 +1,9 @@
-import React,{ useState , useEffect,Component} from "react";
-import { usePromiseTracker } from "react-promise-tracker";
-import { render } from 'react-dom';
+import React,{ useState ,Component} from "react";
 import '../Style/style_html.css'
-
 import db from '../DataBase/Firebase'
+import Car_Img from './car_img'
 var Cars =[];
- 
+let a =false;
 class CARS extends Component {
   constructor(props) {
       super(props);
@@ -13,7 +11,7 @@ class CARS extends Component {
           isFetching: false,
           number: 0,
           namn: "",
-          img:"",
+          img:"wait.jpg",
           flavor:"",
           score:"",
           like:""
@@ -36,13 +34,16 @@ update_state = () =>{
   this.setState({namn :Cars[this.props.number].data().Name})
   this.setState({like :Cars[this.props.number].data().likes})
   this.setState({score :Cars[this.props.number].data().score})
+  this.setState({img :Cars[this.props.number].data().carImg})
+  a = true
 
 }
-           render() {
+
+render() {
             return (
               <div className="card">
               <h5>{this.state.namn}</h5>
-              <img src={this.state.img}/>
+              <Car_Img img_src={this.state.img}/>
       <p>{this.state.flavor}</p>
               <span>
       <div>{this.state.score}</div>
@@ -52,5 +53,6 @@ update_state = () =>{
           </div>);
             
         }
+        a=false;
       }
 export default CARS

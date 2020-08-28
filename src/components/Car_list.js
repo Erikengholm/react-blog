@@ -6,7 +6,7 @@ const Car_list  = () => (
     <div id="Main-Content" class="vänsterKollumn">
     <CARS number={0}/>
     <CARS number={1}/>
-    <CARS number={2}/>
+
     </div>
 );
 

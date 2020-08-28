@@ -24,8 +24,8 @@ const App = () => (
    <header>
       <h1>Eriks blogg</h1>
    </header>
-   <div class="container-fluid">
-      <div class="row">
+   <div className="container-fluid">
+      <div className="row">
        <Car_list/>
          <div className="högerKollumn">
             <div className="card">
