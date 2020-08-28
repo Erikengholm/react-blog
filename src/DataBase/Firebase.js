@@ -1,6 +1,5 @@
-import * as firebase from 'firebase';
-
-let config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
+import firebase from 'firebase'
+var config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
     apiKey: "AIzaSyAyooVNL_4keVvsAHK2zGuod03UksKjLzQ",
     authDomain: "car-database-c2c5c.firebaseapp.com",
     databaseURL: "https://car-database-c2c5c.firebaseio.com",
@@ -10,6 +9,7 @@ let config = { /* COPY THE ACTUAL CONFIG FROM FIREBASE CONSOLE */
     appId: "1:605463403199:web:3fde78eaab9d08f71d840a",
     measurementId: "G-CG046FQQH3"
 };
-firebase.initializeApp(config);
+var f = firebase.initializeApp(config);
+const db = f.firestore();
 
-export default firebase;
+export default db;
