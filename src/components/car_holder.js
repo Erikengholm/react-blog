@@ -1,4 +1,4 @@
-import React,{ useState ,Component} from "react";
+import React,{Component} from "react";
 import '../Style/style_html.css'
 import db from '../DataBase/Firebase'
 import Car_Img from './car_img'
@@ -35,7 +35,6 @@ update_state = () =>{
   this.setState({like :Cars[this.props.number].data().likes})
   this.setState({score :Cars[this.props.number].data().score})
   this.setState({img :Cars[this.props.number].data().carImg})
-  a = true
 
 }
 
@@ -53,6 +52,5 @@ render() {
           </div>);
             
         }
-        a=false;
       }
 export default CARS

@@ -3,8 +3,9 @@ body{
     margin: 0;
     background-color: #f1f1f1 
 }
+
 #backcover{
-    background-image: url('.././Bilder/road.jpg');
+    background-image: url('../Bilder/road.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
@@ -69,7 +70,18 @@ h2{
     overflow: hidden;
 }
 .card img{
-    width: 100% 
+    width: 100%;
+    max-height: 450px;
+}
+.row{
+    display: flex;
+    flex-flow: row;
+}
+.icon_img{
+    padding-left: 5px;
+    max-width: 40px;
+    max-height: 40px;
+    padding-right: 5px;
 }
 footer{
     background-color: #dddddd;
