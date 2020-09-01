@@ -11,7 +11,7 @@ class CARS extends Component {
           isFetching: false,
           number: 0,
           namn: "",
-          img:"wait.jpg",
+          carImg:"wait.jpg",
           flavor:"",
           score:"",
           like:""
@@ -31,10 +31,8 @@ class CARS extends Component {
   );this.update_state();
 })}
 update_state = () =>{
-  this.setState({namn :Cars[this.props.number].data().Name})
-  this.setState({like :Cars[this.props.number].data().likes})
-  this.setState({score :Cars[this.props.number].data().score})
-  this.setState({img :Cars[this.props.number].data().carImg})
+  const data = Cars[this.props.number].data()
+  this.setState( { ...data  }  )
 
 }
 
@@ -42,7 +40,7 @@ render() {
             return (
               <div className="card">
               <h5>{this.state.namn}</h5>
-              <Car_Img img_src={this.state.img}/>
+              <Car_Img img_src={'/Bilder/'+this.state.carImg}/>
       <p>{this.state.flavor}</p>
               <span>
       <div>{this.state.score}</div>

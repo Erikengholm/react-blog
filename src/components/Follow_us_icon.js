@@ -3,7 +3,7 @@ import '../Style/style_html.css'
 const Follow_us_icon = ({path ,icon}) =>(
     <div className="col">
          <a href={path}>
-         <img  src={require("../Bilder/"+icon)} className="icon_img"/>
+         <img  src={"/Bilder/"+icon} className="icon_img"/>
          </a>
     </div>
 );
