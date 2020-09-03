@@ -20,7 +20,7 @@ class CARS extends Component {
 
   componentDidMount() {
     this.fetchCars();
-    this.timer = setInterval(() => this.fetchCars(), 5000);
+    this.timer = setInterval(() => this.fetchCars(), 50000);
 }
  fetchCars = () =>{
   db.collection('Car-base').orderBy("Name").get().then((snapshot) => {

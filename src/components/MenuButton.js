@@ -48,10 +48,14 @@ class MenuButton extends Component {
                 this.setState({comp_id:"rightblogMenyBox"})
                 this.setState({name:"logga in"})
                 break;
+            case 6:
+                this.setState({Path: () => this.props.showLogin("guest") })
+                this.setState({comp_id:"rightblogMenyBox"})
+                this.setState({name:"logga ut"})
+                break;
 
         }
       }    
-
     render() {
      
         return (
