@@ -1,51 +1,48 @@
-import React, { useState, useContext } from "react";
-import Car_list from './Car_list'
+import React, { useState} from "react";
+import Car_list from './Cars/'
 import '../Style/style_html.css'
-import Menu from './Menu'
-import Sido_menu from './Sido_menu'
+import Menu from './Menu/'
+import Sido_menu from './Side_menu/'
 import Container from 'react-bootstrap/Container';
-import Log_in from "./Log_in";
-import {userContext} from './userContext';
+import Row from 'react-bootstrap/Row'
+import Log_in from "./Log_in/";
+import {userContext} from './UserContext';
+import Header from './Header'
+import Footer from './Footer'
+
 
 const App = () => {
-   const [loggedIn, setLogin] = useState()
+   const [loggedIn, setLogin] = useState(false)
    const [user, setUser] = useState("guest")
 
    const value = { user, setUser };
-   const contextvalue = useContext(userContext)
-
-   if(loggedIn){
-      document.getElementById('backcover').style.filter = 'blur(5px)'
-   }
-   else if (loggedIn == false){
-      document.getElementById('backcover').style.filter = 'blur(0px)'
-   }
-return (
-   <div>       
-       <userContext.Provider value={value}>
-
-
-   <div id="backcover">
+//skapa compenent  backcover som går på och av med blur via state
+// formanterra javascript bitarna i koden
+// LETA OCH TA BORT ONÖDIG KOD
+  
+   return (
+   <div>
+   <div id="backcover"style={{filter: loggedIn ? "blur(5px)":"blur(0px)"}}>
+   <userContext.Provider value={value}>
       <Menu showLogin={setLogin} />
-   <header>
-      <h1>{user} blogg</h1>
-   </header>
+      <Header user={user}/> 
+
+   </userContext.Provider>
+
    <Container>
-      <div className="row">
-         
+      <Row>
          <Car_list/>
-
          <Sido_menu/>
-      </div>
+      </Row>
    </Container>
-<footer>
-   <h2>Footer</h2>
-</footer>
+<Footer/>
+</div>   
+<userContext.Provider value={value}>
+    <Log_in log={loggedIn} showLogin={setLogin}/>
 
-</div> 
-  <Log_in log={loggedIn} showLogin={setLogin}/>
+   </userContext.Provider>
 
-  </userContext.Provider>
 </div>
+
 );}
 export default App;
